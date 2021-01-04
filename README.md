@@ -4,7 +4,7 @@ To compile:
 `cd src && g++ -o run main.cpp -std=c++11`
 
 To Run: 
-`cd src && ./run`
+`./run`
 
 [How to play](https://en.boardgamearena.com/gamepanel?game=sechsnimmt)
 
