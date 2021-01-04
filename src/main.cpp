@@ -4,6 +4,8 @@
 #include "Board.h"
 
 #include <stdio.h>
+#include <cstdlib> 
+#include <ctime>
 #include <list>  
  
 /**
@@ -13,8 +15,8 @@
 Deck<Card> createDeck() {
     std::vector<Card> cardList;  
     for (int i = 1; i < 105; i++) {
-        Card carte(i);
-        cardList.push_back(carte); 
+        Card c(i);
+        cardList.push_back(c); 
     }
     
     Deck<Card> deck(cardList); 
@@ -120,6 +122,7 @@ int requestRow(const Player* p) {
 
 int main()
 {
+    srand(time(NULL));
     std::cout << "----------------------" << std::endl;
     std::cout << "\n6Nimmt (Take-6)\n" << std::endl;
     std::cout << "----------------------" << std::endl;
@@ -136,7 +139,7 @@ int main()
         Deck<Card> gameDeck= createDeck(); 
 
         // Shuffle the deck                       
-        gameDeck.shuffleDeck(1234); 
+        gameDeck.shuffleDeck(rand() % 100 + 1); 
         
         // Clear the game board
         ~gameBoard; 
