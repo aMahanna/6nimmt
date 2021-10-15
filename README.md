@@ -1,10 +1,12 @@
 # 6Nimmt! Card Game
 
-To compile: 
-`cd src && g++ -o run main.cpp -std=c++11`
-
-To Run: 
-`./run`
+Setup
+```
+mkdir build && cd build
+cmake ..
+make
+./mussolini
+```
 
 [How to play](https://en.boardgamearena.com/gamepanel?game=sechsnimmt)
 
