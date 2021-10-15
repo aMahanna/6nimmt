@@ -1,41 +1,44 @@
-#ifndef DECK_H 
-#define DECK_H 
+#pragma once
+#ifndef DECK_H
+#define DECK_H
+
+#include <random>
+#include <vector>
 
 /**
-	* Deck class
-	* Represents the deck of 104 cards created for the game
+ * Deck class
+ * Represents the deck of 104 cards created for the game
  */
-template <typename T>
-class Deck {
-    std::vector<T> elemList;  
- public:
+template <typename T> class Deck {
+  std::vector<T> elemList;
 
-    Deck() {}
-    Deck(const vector<T>& copyList) {
-        elemList = copyList;
+public:
+  Deck() {}
+  Deck(const std::vector<T> &copyList) { elemList = copyList; }
+
+  // Shuffles the vector num times
+  void shuffleDeck(int num) {
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+    for (int i = 0; i < num; i++) {
+      std::shuffle(elemList.begin(), elemList.end(), g);
     }
-    
-    
-    // Shuffles the vector num times
-    void shuffleDeck(int num) {					
-        for (int i = 0; i < num; i++) {
-           std::random_shuffle(elemList.begin(), elemList.end());
-        }
-    }
-    
-    
-    // Operator += overload to add a card to the bottom of the deck
-    Deck& operator+=(const T& e) {         
-        elemList.insert(elemList.begin(), e);
-        return *this; 
-    }
-    
-    // Operator -- overload to remove a card from the top of the deck and return it
-    T operator--() {						
-        T val = elemList.back();
-        elemList.pop_back();
-        return val; 
-    }
+  }
+
+  // Operator += overload to add a card to the bottom of the deck
+  Deck &operator+=(const T &e) {
+    elemList.insert(elemList.begin(), e);
+    return *this;
+  }
+
+  // Operator -- overload to remove a card from the top of the deck and return
+  // it
+  T operator--() {
+    T val = elemList.back();
+    elemList.pop_back();
+    return val;
+  }
 };
 
 #endif

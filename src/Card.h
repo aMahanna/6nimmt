@@ -1,67 +1,39 @@
+#pragma once
 #ifndef CARD_H
 #define CARD_H
 
-#include <string>  
-#include <sstream>      
-using namespace std;
+#include <sstream>
+#include <string>
 
 /**
-	* Class Card
-    * Each card has a card number and a bullHead value
+ * Class Card
+ * Each card has a card number and a bullHead value
  */
-class Card {                                   
-    int bullHeads; 
-    int cardNum;
- public: 
+class Card {
+  int bullHeads;
+  int cardNum;
 
-    // Create a Card and set the number of bullHeads based on the game's rules
-    Card(int n): cardNum(n) { 
-        if (cardNum % 11 == 0) { 
-            bullHeads = cardNum == 55 ? 7 : 5; 
-        } else if (cardNum % 10 == 0) { 
-            bullHeads = 3;
-        } else if (cardNum % 5 == 0) { 
-            bullHeads = 2;
-        } else {
-            bullHeads = 1; 
-        }
-    }
-    // Copy constructor 
-    Card(const Card& c): bullHeads(c.bullHeads),cardNum(c.cardNum){}
-    
-    Card() {}
-    
-    // Operator * overload to return the number of bullHeads
-    int operator*() const { 
-        return bullHeads; 
-    } 
-    
-    // Operator < overload to compare two cardNums 
-    bool operator<(const Card& c) const {
-        return cardNum < c.cardNum; 
-    }
-    
-    int getCardNum() const { 
-        return cardNum;
-    } 
-    
-    /**
-	 * toString()
-     * Prints the card values in a readable format
-	 */
-    const string toString() const {
-            stringstream ss (stringstream::in | stringstream::out);
-            ss << "(" << cardNum << ", " << bullHeads << ")"; 
-            return ss.str();
-    }
+public:
+  // Constructors Empty, Parameterized, & Copy
+  Card();
+  Card(int n);
+  Card(const Card &c);
+
+  // Operator * overload to return the number of bullHeads
+  int operator*() const;
+  // Operator < overload to compare two cardNums
+  bool operator<(const Card &c) const;
+
+  int getCardNum() const;
+
+  const std::string toString() const;
 };
 
 /**
-     * Operator << overload for cout operations
- */ 
-inline ostream& operator<<(ostream &left, const Card &right) {
-    left << right.toString();
-    return left;
+ * Operator << overload for cout operations
+ */
+inline std::ostream &operator<<(std::ostream &left, const Card &right) {
+  left << right.toString();
+  return left;
 }
 #endif
-
