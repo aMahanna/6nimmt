@@ -6,6 +6,3 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: RafikFarhad/clang-format-github-action@v1.0.1
-        with:
-          sources: "src/**/*.h,src/**/*.cpp"
-          style: "Microsoft"
