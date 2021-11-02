@@ -5,7 +5,7 @@ Setup
 mkdir build && cd build
 cmake ..
 make
-./mussolini
+./exec
 ```
 
 [How to play](https://en.boardgamearena.com/gamepanel?game=sechsnimmt)
