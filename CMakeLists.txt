@@ -5,4 +5,4 @@ project(6nimmt)
 
 include_directories( ./src )
 
-add_executable( mussolini ./src/main.cpp ./src/Card.cpp ./src/Board.cpp ./src/Player.cpp )
+add_executable( exec ./src/main.cpp ./src/Card.cpp ./src/Board.cpp ./src/Player.cpp )
