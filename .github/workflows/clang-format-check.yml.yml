@@ -1,11 +1,11 @@
-name: aMahanna-clang-format
-on: push
+name: Clang Format Checker
+on: [push]
 jobs:
-  lint:
-    name: aMahanna-clang-format
+  clang-format-checking:
     runs-on: ubuntu-latest
     steps:
-    - name: aMahanna-clang-format
-      uses: aMahanna/clang-format-action@v0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: RafikFarhad/clang-format-github-action@v1.0.1
+        with:
+          sources: "src/**/*.h,src/**/*.cpp"
+          style: "Microsoft"
