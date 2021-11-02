@@ -1,19 +1,12 @@
-name: clang-format Check
-on: [push, pull_request]
+name: test-clang-format
+on: [push]
 jobs:
-  formatting-check:
-    name: Formatting Check
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        path:
-          - 'src'
-          - 'temp'
     steps:
     - uses: actions/checkout@v2
-    - name: Run clang-format style check for C/C++ programs.
-      uses: jidicula/clang-format-action@v4.2.0
+    - uses: DoozyX/clang-format-lint-action@v0.13
       with:
-        clang-format-version: '11'
-        check-path: ${{ matrix.path }}
-        fallback-style: 'Google' # optional
+        source: 'src'
+        clangFormatVersion: 11
+        style: google
