@@ -1,12 +1,11 @@
-name: test-clang-format
-on: [push]
+name: clang-format Code Formatter
+on: push
 jobs:
-  build:
+  lint:
+    name: clang-format Code Formatter
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: DoozyX/clang-format-lint-action@v0.13
-      with:
-        source: 'src'
-        clangFormatVersion: 11
-        style: google
+    - name: Clang Code Formatter
+      uses: ivanludvig/clang-format-action@v1.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
