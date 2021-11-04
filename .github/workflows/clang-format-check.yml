@@ -1,12 +1,12 @@
-name: Clang Format Checker
-on: [push]
+name: clang-format-checker
+on: push
 jobs:
-  clang-format-checking:
+  lint:
+    name: clang-format-checker
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/clang-format-check'
     steps:
-      - uses: actions/checkout@v2
-      - uses: RafikFarhad/clang-format-github-action@v1.0.1
-        with:
-          sources: "src/*.cpp,src/*.h"
-          style: "google"
+    - name: clang-format-checker
+      uses: amahanna/clang-format-checker@v.0.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
