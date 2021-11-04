@@ -1,12 +1,12 @@
-name: Clang Format Fixer
+name: clang-format-fixer
 on: push
 jobs:
   lint:
-    name: clang-format Code Formatter
+    name: clang-format-fixer
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/clang-format-fix'
     steps:
-    - name: Clang Code Formatter
-      uses: ivanludvig/clang-format-action@v1.4
+    - name: clang-format-fixer
+      uses: amahanna/clang-format-fixer@v0.0.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
