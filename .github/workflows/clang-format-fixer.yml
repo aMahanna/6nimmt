@@ -7,7 +7,7 @@ jobs:
     if: github.ref == 'refs/heads/clang-format-fixer'
     steps:
       - uses: actions/checkout@v2
-      - uses: amahanna/clang-format-fixer@v0.1.0
+      - uses: amahanna/clang-format-fixer@v1.0.3
         with:
           sources: "src/*.cpp,src/*.h"
         env:
