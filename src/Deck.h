@@ -9,7 +9,7 @@
  * Deck class
  * Represents the deck of 104 cards created for the game
  */
-template<typename T>
+template <typename T>
 class Deck {
   std::vector<T> elemList;
 
