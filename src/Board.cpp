@@ -21,18 +21,12 @@ Board &Board::operator[](int i) {
 
 std::pair<std::vector<Card>, bool> Board::operator<<(const Card &c) {
   // Case 1: rowChoice has been set, load card into the respective row
-  if (rowChoice != -1) { std::vector<Card> copy = rows[rowChoice]; rows[rowChoice].clear(); rows[rowChoice].push_back(c);
+  if (rowChoice != -1) {
+    std::vector<Card> copy = rows[rowChoice];
+    rows[rowChoice].clear();
+    rows[rowChoice].push_back(c);
     resetRowChoice();  // reset the rowChoice
 
-
-
-
-
-
-
-
-
-    
     return make_pair(copy, true);
   }
 

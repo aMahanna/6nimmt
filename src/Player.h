@@ -1,14 +1,14 @@
 #pragma once
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "Card.h"
-
 #include <algorithm>
 #include <iostream>
 #include <iterator>
 #include <sstream>
 #include <string>
 #include <vector>
+
+#include "Card.h"
 
 class Card;
 

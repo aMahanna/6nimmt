@@ -13,18 +13,16 @@ class Card {
   int bullHeads;
   int cardNum;
 
-
-
-
-
-public:
+ public:
   // Constructors Empty, Parameterized, & Copy
-  Card();Card(int n);Card(const Card &c);
+  Card();
+  Card(int n);
+  Card(const Card &c);
 
   // Operator * overload to return the number of bullHeads
   int operator*() const;
   // Operator < overload to compare two cardNums
-bool operator<(const Card &c) const;
+  bool operator<(const Card &c) const;
 
   int getCardNum() const;
 
@@ -35,6 +33,7 @@ bool operator<(const Card &c) const;
  * Operator << overload for cout operations
  */
 inline std::ostream &operator<<(std::ostream &left, const Card &right) {
-  left << right.toString(); return left;
+  left << right.toString();
+  return left;
 }
 #endif

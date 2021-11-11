@@ -1,12 +1,13 @@
+#include <stdio.h>
+
+#include <cstdlib>
+#include <ctime>
+#include <list>
+
 #include "Board.h"
 #include "Card.h"
 #include "Deck.h"
 #include "Player.h"
-
-#include <stdio.h>
-#include <cstdlib>
-#include <ctime>
-#include <list>
 
 /**
  * createDeck()
