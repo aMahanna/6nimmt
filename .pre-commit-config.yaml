@@ -4,5 +4,5 @@ repos:
     - id: hi
       name: say-hi
       entry: ./scripts/run.sh
-      args: ["echo ${PWD}"]
+      args: ["/Users/anthonymahanna/Desktop/Github/6nimmt"]
       language: script
