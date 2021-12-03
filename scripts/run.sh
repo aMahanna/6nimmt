@@ -15,5 +15,9 @@ then
 fi
 
 diff="$community_diff $enterprise_diff"
-echo "docker run -it --rm -v "$adb_path":/usr/src/arangodb clang-format:latest $diff"
-docker run --rm -v "$adb_path":/usr/src/arangodb clang-format:latest "$diff"
+if [[ -z "${diff// }" ]]; then
+    echo "nothing to format"
+else
+    echo "docker run --rm -v "$adb_path":/usr/src/arangodb clang-format:latest $diff"
+    docker run --rm -v "$adb_path":/usr/src/arangodb clang-format:latest "$diff"
+fi
