@@ -4,5 +4,5 @@ repos:
     - id: hi
       name: say-hi
       entry: ./scripts/run.sh
-      args: ["${PWD}"]
+      args: ["$PWD"]
       language: script
