@@ -18,7 +18,8 @@ echo $community_diff
 echo $enterprise_diff
 
 diff="$community_diff $enterprise_diff"
-if [[ -n "${str// /}" ]]; then
+echo $diff
+if [[ $param = *[!\ ]* ]]; then
     echo "docker run -it --rm -v "$adb_path":/usr/src/arangodb clang-format:latest $diff"
     docker run -it --rm -v "$adb_path":/usr/src/arangodb clang-format:latest $diff
 fi
