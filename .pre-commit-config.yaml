@@ -3,5 +3,5 @@ repos:
   hooks:
     - id: hi
       name: say-hi
-      entry: ./run.sh
+      entry: ./scripts/run.sh
       language: script
