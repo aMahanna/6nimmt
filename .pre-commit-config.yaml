@@ -1,6 +1,7 @@
+repos:
 - repo: local
   hooks:
     - id: hi
       name: say-hi
-      entry: ./hi.sh
+      entry: ./run.sh
       language: script
