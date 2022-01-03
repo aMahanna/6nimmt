@@ -1,7 +1,0 @@
-repos:
-- repo: local
-  hooks:
-    - id: hi
-      name: say-hi
-      entry: ./scripts/run.sh
-      language: script
