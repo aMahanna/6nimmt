@@ -2,6 +2,8 @@
 
 Setup
 ```
+git clone https://github.com/aMahanna/6nimmt.git
+cd 6nimmt
 mkdir build
 cmake ..
 make
