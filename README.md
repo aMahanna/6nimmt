@@ -2,7 +2,7 @@
 
 Setup
 ```
-mkdir build && cd build
+mkdir build
 cmake ..
 make
 ./exec
