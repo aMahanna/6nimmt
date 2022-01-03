@@ -4,7 +4,7 @@ Setup
 ```
 git clone https://github.com/aMahanna/6nimmt.git
 cd 6nimmt
-mkdir build
+mkdir build && cd build
 cmake ..
 make
 ./exec
